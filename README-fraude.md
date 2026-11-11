@@ -51,6 +51,10 @@ Não faça upload do CSV pelo Portal e não copie o dataset para a imagem Docker
 O arquivo do Kaggle tem aproximadamente 180 MB, enquanto a API precisa
 somente do `modelo_fraude.pkl` depois do treinamento.
 
+O `treinar_fraude.py` baixa e extrai o dataset automaticamente quando
+`fraud.csv` ainda não existe. Portanto, não é necessário versionar ou copiar o
+CSV para o repositório.
+
 Crie uma conta no Kaggle, gere um token em **Settings → API → Create New
 Token** e defina as credenciais apenas na sessão atual do Cloud Shell:
 
@@ -115,7 +119,8 @@ Shell. O ACI é usado para servir inferência e não para treinar o modelo.
 
 ## 3. Treinar o modelo
 
-Se você já possui o arquivo, salve-o como `fraud.csv` dentro desta pasta.
+Se você já possui o arquivo, salve-o como `fraud.csv` dentro desta pasta. Caso
+contrário, o comando abaixo faz o download automaticamente:
 
 O treinamento usa as colunas:
 

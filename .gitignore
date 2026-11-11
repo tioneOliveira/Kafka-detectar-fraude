@@ -1,3 +1,4 @@
 config.env
+fraud.csv
 __pycache__/
 modelo_fraude.pkl
