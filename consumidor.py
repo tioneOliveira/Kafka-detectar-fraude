@@ -366,7 +366,8 @@ def processar(msg, args, cfg, consumidor, container):
         return
 
     # O offset permanece no nome para tornar reprocessamentos idempotentes.
-    nome_blob = f"{args.prefixo}/{msg.partition()}-{msg.offset()}.json"
+    pasta = "fraude" if fraude else "normal"
+    nome_blob = f"{args.prefixo}/{pasta}/{msg.partition()}-{msg.offset()}.json"
     resultado = {
         "id": identificador,
         "transacao": evento,
