@@ -1,0 +1,7 @@
+confluent-kafka>=2.4
+azure-storage-blob>=12.19
+pandas>=2.2
+fastapi>=0.115
+uvicorn[standard]>=0.30
+scikit-learn>=1.4
+joblib>=1.3
